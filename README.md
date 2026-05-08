@@ -20,6 +20,26 @@ Invoke with:
 /four-color-review
 ```
 
+Continuation modes:
+
+```text
+/four-color-review -c <review-doc.md>
+/four-color-review -a <review-doc.md>
+```
+
+- `-c` continues only unresolved issues scored below 6/10.
+- `-a` re-asks all recorded issues regardless of prior score or resolution.
+
+## Risk scoring
+
+- Each recorded issue gets a `Health Score` from `0-10`.
+- Lower scores mean higher risk and weaker business closure.
+- The review document ends with a final `0-100` health score.
+
+## Optional optimized requirements document
+
+After the review document is complete, the skill asks whether to generate an optimized requirements document from the reviewed content.
+
 ## Example input
 
 ```text
@@ -34,4 +54,7 @@ Invoke with:
 4. Missing Information Questions
 5. Four-Color Extraction
 6. Responsibility and Relationship Analysis
-7. Domain Suggestions
+7. Risk Register
+8. Health Score Summary
+9. Domain Suggestions
+10. Optional optimized requirements document prompt

@@ -29,15 +29,16 @@ Do not use this skill to produce API design, database tables, class diagrams, or
    - how the system or business responds
    - what result is produced
    - where the loop closes
-3. Check whether the story closes.
-4. If a blocking gap exists, stop and ask exactly one clarifying question with `AskUserQuestion`.
-5. Only after the story closes, extract four-color groups:
-   - role objects
-   - core business objects
-   - rule/description objects
-   - time/event objects
-6. Analyze responsibility and relationship gaps.
-7. End with lightweight domain suggestions only.
+3. After story reconstruction, output a dedicated `Storyline` section before any four-color grouping.
+4. Check whether the story closes.
+5. If a blocking gap exists, stop and ask exactly one clarifying question with `AskUserQuestion`.
+6. Only after the story closes, output a dedicated `Four-Color Extraction` section using exactly these four subgroup labels:
+   - Role objects
+   - Core business objects
+   - Rule/description objects
+   - Time/event objects
+7. Analyze responsibility and relationship gaps.
+8. End with lightweight domain suggestions only.
 
 ## Blocking Rules
 

@@ -32,13 +32,20 @@ Do not use this skill to produce API design, database tables, class diagrams, or
 3. After story reconstruction, output a dedicated `Storyline` section before any four-color grouping.
 4. Check whether the story closes.
 5. If a blocking gap exists, stop and ask exactly one clarifying question with `AskUserQuestion`.
-6. Only after the story closes, output a dedicated `Four-Color Extraction` section using exactly these four subgroup labels:
+6. If the user answers `pass`, keep going but record the issue in `Risk Register` with:
+   - `User Action: pass`
+   - `Status: unresolved`
+   - `Health Score: x/10`
+7. Score each open issue on a 0-10 health scale, where lower scores mean higher risk and weaker business closure.
+8. Only after the story closes, output a dedicated `Four-Color Extraction` section using exactly these four subgroup labels:
    - Role objects
    - Core business objects
    - Rule/description objects
    - Time/event objects
-7. Analyze responsibility and relationship gaps.
-8. End with lightweight domain suggestions only.
+9. Analyze responsibility and relationship gaps.
+10. Output `Risk Register` and `Health Score Summary`, and report the final overall score on a 0-100 scale.
+11. End with lightweight domain suggestions only.
+12. After the review document is complete, ask whether the user wants an optimized requirements document generated from the current review. If the user declines, end the turn.
 
 ## Blocking Rules
 
@@ -64,7 +71,14 @@ Always structure the output in this order:
 4. Missing Information Questions (only if blocked)
 5. Four-Color Extraction
 6. Responsibility and Relationship Analysis
-7. Domain Suggestions
+7. Risk Register
+8. Health Score Summary
+9. Domain Suggestions
+
+## Continuation Modes
+
+- `/four-color-review -c <document-path>` continues only unresolved items scored below 6/10.
+- `/four-color-review -a <document-path>` re-asks all issues regardless of prior score or resolution state.
 
 ## Domain Suggestion Boundary
 

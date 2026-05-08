@@ -36,6 +36,39 @@
         {"text": "separates role, business object, rule, and event categories"},
         {"text": "keeps domain suggestions above API or schema detail"}
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "/four-color-review 审这个退款需求。如果我对某个关键问题回答 pass，请把它记成 unresolved 风险点，给出 0-10 健康分，并在最后汇总百分制总分。",
+      "expected_output": "The response should record pass as unresolved, emit a Risk Register entry with Health Score x/10, and end with a percentage summary.",
+      "files": [],
+      "assertions": [
+        {"text": "records unresolved risks with a 0-10 Health Score"},
+        {"text": "summarizes unresolved risks and a final 0-100 score"},
+        {"text": "respects the requested continuation or follow-up mode"}
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "/four-color-review -c docs/review.v1.md 只对低于 6/10 且 unresolved 的问题继续追问，并重新输出评审文档。",
+      "expected_output": "The response should explain that -c only continues unresolved items below 6/10 and produces a new document version.",
+      "files": [],
+      "assertions": [
+        {"text": "records unresolved risks with a 0-10 Health Score"},
+        {"text": "summarizes unresolved risks and a final 0-100 score"},
+        {"text": "respects the requested continuation or follow-up mode"}
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "/four-color-review 审完后请问我是否要基于评审文档生成优化后的需求文档。",
+      "expected_output": "The response should first produce the review document and then ask whether to generate an optimized requirements document.",
+      "files": [],
+      "assertions": [
+        {"text": "records unresolved risks with a 0-10 Health Score"},
+        {"text": "summarizes unresolved risks and a final 0-100 score"},
+        {"text": "respects the requested continuation or follow-up mode"}
+      ]
     }
   ]
 }

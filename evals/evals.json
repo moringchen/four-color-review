@@ -5,19 +5,37 @@
       "id": 1,
       "prompt": "请你用四色建模和讲故事法审一下这段业务需求，看它是否闭环；如果不完整就追问我。我们要做一个优惠券领取功能，用户在商品详情页点击领取后，系统要把券放到用户账户里，支付时自动使用最优券。",
       "expected_output": "Without the skill, the baseline will likely skip structured story-closure checks, skip explicit stop-and-ask behavior, or blur four-color categories.",
-      "files": []
+      "files": [],
+      "assertions": [
+        {"text": "starts with a storyline before listing four-color groups"},
+        {"text": "asks a blocking question when closure cannot be proven"},
+        {"text": "separates role, business object, rule, and event categories"},
+        {"text": "keeps domain suggestions above API or schema detail"}
+      ]
     },
     {
       "id": 2,
       "prompt": "请站在架构师视角，审核这个 PRD 的业务故事和四色主体。PRD：商家可以发起退款申请，财务审批通过后退款原路返回；如果原路返回失败，需要人工介入。请检查职责断点和闭环。",
       "expected_output": "The reviewer should isolate initiator, approver, refund object, failure event, and manual intervention gap rather than jumping straight to implementation.",
-      "files": []
+      "files": [],
+      "assertions": [
+        {"text": "starts with a storyline before listing four-color groups"},
+        {"text": "asks a blocking question when closure cannot be proven"},
+        {"text": "separates role, business object, rule, and event categories"},
+        {"text": "keeps domain suggestions above API or schema detail"}
+      ]
     },
     {
       "id": 3,
       "prompt": "/four-color-review 帮我看这个流程讲不讲得通：用户预约课程后，系统给老师发通知；老师确认后生成课表；如果老师 24 小时内没确认，运营介入。请抽四色主体并指出风险。",
       "expected_output": "The reviewer should narrate the flow first, identify timeout handling and operator role, then output four-color groups and domain suggestions.",
-      "files": []
+      "files": [],
+      "assertions": [
+        {"text": "starts with a storyline before listing four-color groups"},
+        {"text": "asks a blocking question when closure cannot be proven"},
+        {"text": "separates role, business object, rule, and event categories"},
+        {"text": "keeps domain suggestions above API or schema detail"}
+      ]
     }
   ]
 }

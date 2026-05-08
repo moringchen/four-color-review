@@ -1,17 +1,19 @@
 # Risk Scoring Reference
 
-## Score meanings
+## Health Score meanings
 
-Use a 0-10 health score for each issue:
+Use a 0-10 Health Score for each issue:
 - 0-3: high risk
 - 4-5: clear risk
 - 6-7: medium risk
 - 8-9: light risk
 - 10: healthy
 
+Treat scores below 6/10 as the high-risk follow-up threshold for continuation and unresolved-item review.
+
 ## High-risk triggers
 
-Lower the score when any of these are true:
+Lower the Health Score when any of these are true:
 - no clear responsible party
 - no terminal state
 - key rule missing
@@ -19,9 +21,14 @@ Lower the score when any of these are true:
 - state cannot be implemented clearly
 - development would be blocked without more detail
 
-## Final score rollup
+## Final Health Score rollup
 
-After all issue scores are collected, convert the full set into a 0-100 final health score and summarize:
+After all issue Health Scores are collected:
+- add all issue scores
+- divide by the number of issues to get the average Health Score
+- multiply the average Health Score by 10 and round to the nearest whole number to get the Final Health Score
+
+Summarize:
 - total risks
 - unresolved risks
-- high-risk items below 6/10
+- high-risk follow-up items below 6/10

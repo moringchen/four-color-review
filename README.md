@@ -9,8 +9,8 @@ Chinese documentation: [README.zh-CN.md](README.zh-CN.md)
 ## Installation
 
 ```text
-/plugin marketplace add xxx
-/plugin marketplace install xxx
+/plugin marketplace add moringchen/four-color-review
+/plugin marketplace install moringchen/four-color-review
 ```
 
 ## When to use

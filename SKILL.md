@@ -1,6 +1,6 @@
 ---
 name: four-color-review
-description: Use when reviewing a business requirement, PRD, user story, or workflow from a developer or architect perspective and you need to check whether the story closes, whether responsibility breaks exist, or whether four-color domain entities should be extracted before discussing implementation.
+description: Use only when the user explicitly invokes one of these slash commands: `/four-color-review`, `/four-color-review:continue <document-path>`, or `/four-color-review:all <document-path>`.
 ---
 
 # four-color-review
@@ -11,13 +11,12 @@ Use storytelling first and four-color modeling second. The goal is to verify tha
 
 ## When to Use
 
-Use this skill when the user asks to:
-- review a business requirement or PRD for closure
-- check whether a workflow or user story makes sense
-- extract business roles, entities, rules, and events
-- inspect responsibility gaps from a developer or architect perspective
+Use this skill only through these explicit slash commands:
+- `/four-color-review` — start a new review
+- `/four-color-review:continue <document-path>` — continue unresolved items below 6/10
+- `/four-color-review:all <document-path>` — re-ask and re-score all recorded issues
 
-Do not use this skill to produce API design, database tables, class diagrams, or implementation plans.
+Do not use fuzzy semantic triggering for this skill. It is a command-driven review tool.
 
 ## Workflow
 
@@ -77,8 +76,8 @@ Always structure the output in this order:
 
 ## Continuation Modes
 
-- `/four-color-review -c <document-path>` continues only unresolved items scored below 6/10.
-- `/four-color-review -a <document-path>` re-asks all issues regardless of prior score or resolution state.
+- `/four-color-review:continue <document-path>` continues only unresolved items scored below 6/10.
+- `/four-color-review:all <document-path>` re-asks all issues regardless of prior score or resolution state.
 
 ## Domain Suggestion Boundary
 

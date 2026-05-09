@@ -24,13 +24,13 @@ Use this skill only through explicit slash commands. It is a command-driven revi
 
 ```text
 /four-color-review
-/four-color-review:continue <review-doc.md>
-/four-color-review:all <review-doc.md>
+/four-color-review-continue <review-doc.md>
+/four-color-review-all <review-doc.md>
 ```
 
 - `/four-color-review` starts a new review
-- `/four-color-review:continue` continues unresolved issues below 6/10
-- `/four-color-review:all` re-asks all recorded issues
+- `/four-color-review-continue` continues unresolved issues below 6/10
+- `/four-color-review-all` re-asks all recorded issues
 
 ## Risk scoring
 

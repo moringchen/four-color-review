@@ -20,13 +20,13 @@ English documentation: [README.md](README.md)
 
 ```text
 /four-color-review
-/four-color-review:continue <review-doc.md>
-/four-color-review:all <review-doc.md>
+/four-color-review-continue <review-doc.md>
+/four-color-review-all <review-doc.md>
 ```
 
 - `/four-color-review`：发起一次新的评审
-- `/four-color-review:continue`：继续处理 `unresolved` 且低于 `6/10` 的风险项
-- `/four-color-review:all`：对全部问题重新回复和重评分
+- `/four-color-review-continue`：继续处理 `unresolved` 且低于 `6/10` 的风险项
+- `/four-color-review-all`：对全部问题重新回复和重评分
 
 ## 输出文档说明
 

@@ -1,6 +1,6 @@
 ---
 name: four-color-review
-description: Use only when the user explicitly invokes one of these slash commands: `/four-color-review`, `/four-color-review:continue <document-path>`, or `/four-color-review:all <document-path>`.
+description: Use only when the user explicitly invokes one of these slash commands: `/four-color-review`, `/four-color-review-continue <document-path>`, or `/four-color-review-all <document-path>`.
 ---
 
 # four-color-review
@@ -13,8 +13,8 @@ Use storytelling first and four-color modeling second. The goal is to verify tha
 
 Use this skill only through these explicit slash commands:
 - `/four-color-review` — start a new review
-- `/four-color-review:continue <document-path>` — continue unresolved items below 6/10
-- `/four-color-review:all <document-path>` — re-ask and re-score all recorded issues
+- `/four-color-review-continue <document-path>` — continue unresolved items below 6/10
+- `/four-color-review-all <document-path>` — re-ask and re-score all recorded issues
 
 Do not use fuzzy semantic triggering for this skill. It is a command-driven review tool.
 
@@ -64,8 +64,8 @@ Each `AskUserQuestion` interaction must contain exactly one question. Do not bat
 
 This rule applies to:
 - blocking clarifying questions
-- follow-up questions in `/four-color-review:continue` mode
-- follow-up questions in `/four-color-review:all` mode
+- follow-up questions in `/four-color-review-continue` mode
+- follow-up questions in `/four-color-review-all` mode
 - the final confirmation about whether to generate an optimized requirements document
 - any follow-up needed before saving the optimized requirements document
 
@@ -126,8 +126,8 @@ Each optimized requirements document must explicitly record:
 
 ## Continuation Modes
 
-- `/four-color-review:continue <document-path>` accepts only a previously generated four-color review score document carrying the fixed score-document marker, and continues only unresolved items scored below 6/10.
-- `/four-color-review:all <document-path>` accepts only a previously generated four-color review score document carrying the fixed score-document marker, and re-asks all issues regardless of prior score or resolution state.
+- `/four-color-review-continue <document-path>` accepts only a previously generated four-color review score document carrying the fixed score-document marker, and continues only unresolved items scored below 6/10.
+- `/four-color-review-all <document-path>` accepts only a previously generated four-color review score document carrying the fixed score-document marker, and re-asks all issues regardless of prior score or resolution state.
 
 ## Domain Suggestion Boundary
 

@@ -12,7 +12,8 @@ Use Claude Code's plugin commands from inside a Claude Code session:
 
 ```text
 /plugin marketplace add moringchen/four-color-review
-/plugin marketplace install moringchen/four-color-review
+/plugin install four-color-review@moringchen-four-color-review
+/reload-plugins
 ```
 
 ## When to use

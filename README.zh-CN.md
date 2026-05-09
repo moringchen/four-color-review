@@ -12,7 +12,8 @@ English documentation: [README.md](README.md)
 
 ```text
 /plugin marketplace add moringchen/four-color-review
-/plugin marketplace install moringchen/four-color-review
+/plugin install four-color-review@moringchen-four-color-review
+/reload-plugins
 ```
 
 ## Slash 命令

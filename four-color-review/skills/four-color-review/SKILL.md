@@ -80,10 +80,11 @@ Stop and ask before continuing if any of these are unclear:
 
 When asking follow-up questions:
 - ask one question at a time
-- ask the smallest question that unblocks closure
-- if multiple gaps exist, choose only the single most blocking gap first
-- do not ask the second question until the first one has been answered
-- continue from the blocked step after the answer arrives
+- ask the smallest question that unblocks the current risk item
+- if multiple risky gaps exist, ask all required risk questions one by one in blocking-priority order
+- do not ask the next question until the current one has been answered
+- continue this serial follow-up loop until all required risk questions for the current review mode have been covered
+- continue from the blocked step after each answer arrives
 - do not invent assumptions and continue silently
 
 ## Output Structure

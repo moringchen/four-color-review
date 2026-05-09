@@ -21,10 +21,11 @@ Do not use fuzzy semantic triggering for this skill. It is a command-driven revi
 1. The input document must be a previously generated four-color review score document.
 2. The input document must carry the fixed score-document marker at the beginning of the file.
 3. All recorded issues must be re-asked regardless of previous resolution or score.
-4. The re-run review must generate a new review document file rather than overwrite the old one.
-5. The new review document filename must use the source requirement document name plus `-评审-日期-版本`.
-6. All user questions must follow the same `AskUserQuestion` single-question rule used by the main four-color-review skill.
-7. The output document must preserve source document path, inherited optimization record if present, question and answer log, risk register, per-item scores, and final score.
+4. The re-run review must ask every required risky follow-up one by one, instead of stopping after only the first risky question.
+5. The re-run review must generate a new review document file rather than overwrite the old one.
+6. The new review document filename must use the source requirement document name plus `-评审-日期-版本`.
+7. All user questions must follow the same `AskUserQuestion` single-question serial loop used by the main four-color-review skill.
+8. The output document must preserve source document path, inherited optimization record if present, question and answer log, risk register, per-item scores, and final score.
 
 ## Delegation
 

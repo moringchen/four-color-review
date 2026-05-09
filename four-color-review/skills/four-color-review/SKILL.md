@@ -50,6 +50,10 @@ Do not use fuzzy semantic triggering for this skill. It is a command-driven revi
 
 Whenever the skill needs the user to answer a question, it must use `AskUserQuestion` in cursor-style interactive selection form. Free-text questioning is not allowed by default and may only be used if the user explicitly selects `Other` in that interaction.
 
+The skill must never ask a plain-text question directly in the response body when user input is required.
+
+Each `AskUserQuestion` interaction must contain exactly one question. Do not batch multiple questions in a single interaction, even if they are related.
+
 This rule applies to:
 - blocking clarifying questions
 - follow-up questions in `/four-color-review:continue` mode

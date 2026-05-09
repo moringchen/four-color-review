@@ -47,7 +47,7 @@ English documentation: [README.md](README.md)
 
 ## 优化后的需求文档
 
-评审文档输出后，skill 会询问是否基于当前评审结果生成一份优化后的需求文档。
+评审文档输出后，skill 会通过 `AskUserQuestion` 的光标选择交互询问是否基于当前评审结果生成一份优化后的需求文档。
 
 ## 已知限制
 

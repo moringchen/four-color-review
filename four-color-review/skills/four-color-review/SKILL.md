@@ -44,7 +44,17 @@ Do not use fuzzy semantic triggering for this skill. It is a command-driven revi
 9. Analyze responsibility and relationship gaps.
 10. Output `Risk Register` and `Health Score Summary`, and report the final overall score on a 0-100 scale.
 11. End with lightweight domain suggestions only.
-12. After the review document is complete, ask whether the user wants an optimized requirements document generated from the current review. If the user declines, end the turn.
+12. After the review document is complete, ask whether the user wants an optimized requirements document generated from the current review using `AskUserQuestion`. If the user declines, end the turn.
+
+## Question Interaction Rule
+
+Whenever the skill needs the user to answer a question, it must use `AskUserQuestion` in cursor-style interactive selection form. Free-text questioning is not allowed by default and may only be used if the user explicitly selects `Other` in that interaction.
+
+This rule applies to:
+- blocking clarifying questions
+- follow-up questions in `/four-color-review:continue` mode
+- follow-up questions in `/four-color-review:all` mode
+- the final confirmation about whether to generate an optimized requirements document
 
 ## Blocking Rules
 

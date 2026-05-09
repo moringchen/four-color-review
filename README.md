@@ -40,7 +40,7 @@ Use this skill only through explicit slash commands. It is a command-driven revi
 
 ## Optional optimized requirements document
 
-After the review document is complete, the skill asks whether to generate an optimized requirements document from the reviewed content.
+After the review document is complete, the skill asks via `AskUserQuestion` cursor-style selection whether to generate an optimized requirements document from the reviewed content.
 
 ## Example input
 
@@ -69,7 +69,7 @@ Typical review records include:
 - unresolved risks
 - per-question health scores
 - a final overall health score
-- follow-up prompts for missing information
+- follow-up prompts for missing information, asked through `AskUserQuestion` cursor-style selection
 
 ## Known limitations
 

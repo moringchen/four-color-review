@@ -84,6 +84,8 @@ When asking follow-up questions:
 - if multiple risky gaps exist, ask all required risk questions one by one in blocking-priority order
 - do not ask the next question until the current one has been answered
 - continue this serial follow-up loop until all required risk questions for the current review mode have been covered
+- each question must state the current story-flow step where the gap appears
+- each question must explicitly explain what part of closure or story completeness is blocked by the missing information
 - continue from the blocked step after each answer arrives
 - do not invent assumptions and continue silently
 

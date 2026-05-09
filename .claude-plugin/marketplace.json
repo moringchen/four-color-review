@@ -1,6 +1,6 @@
 {
   "name": "moringchen-four-color-review",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Marketplace for four-color-review plugin.",
   "owner": {
     "name": "moringchen",
@@ -12,7 +12,7 @@
       "name": "four-color-review",
       "description": "Slash-only business requirement review skill using storytelling and four-color modeling.",
       "source": "./four-color-review",
-      "version": "1.0.9",
+      "version": "1.0.10",
       "author": {
         "name": "moringchen",
         "email": "placeholder@example.com"

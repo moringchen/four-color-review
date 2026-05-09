@@ -25,7 +25,8 @@ Do not use fuzzy semantic triggering for this skill. It is a command-driven revi
 5. The continued review must generate a new review document file rather than overwrite the old one.
 6. The new review document filename must use the source requirement document name plus `-评审-日期-版本`.
 7. All user questions must follow the same `AskUserQuestion` single-question serial loop used by the main four-color-review skill.
-8. The output document must preserve source document path, inherited optimization record if present, question and answer log, risk register, per-item scores, and final score.
+8. Each asked question must identify the current story-flow step and explain what closure or story completeness is blocked if the answer stays unclear.
+9. The output document must preserve source document path, inherited optimization record if present, question and answer log, risk register, per-item scores, and final score.
 
 ## Delegation
 

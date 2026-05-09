@@ -1,0 +1,6 @@
+{
+  "name": "four-color-review",
+  "displayName": "four-color-review",
+  "description": "Slash-only business requirement review skill using storytelling and four-color modeling.",
+  "source": "moringchen/four-color-review"
+}

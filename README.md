@@ -24,29 +24,19 @@ After that, restart Claude Code or start a new session so the skill is discovere
 
 ## When to use
 
-Use it when you need to:
-- review whether a requirement is closed-loop
-- find missing responsibilities or failure handlers
-- extract four-color domain entities
-- produce lightweight domain suggestions without designing implementation details
+Use this skill only through explicit slash commands. It is a command-driven review tool and no longer relies on fuzzy semantic triggering.
 
-## Slash command
-
-Invoke with:
+## Slash commands
 
 ```text
 /four-color-review
+/four-color-review:continue <review-doc.md>
+/four-color-review:all <review-doc.md>
 ```
 
-## Continuation modes
-
-```text
-/four-color-review -c <review-doc.md>
-/four-color-review -a <review-doc.md>
-```
-
-- `-c` continues only unresolved issues scored below 6/10.
-- `-a` re-asks all recorded issues regardless of prior score or resolution.
+- `/four-color-review` starts a new review
+- `/four-color-review:continue` continues unresolved issues below 6/10
+- `/four-color-review:all` re-asks all recorded issues
 
 ## Risk scoring
 
@@ -91,4 +81,65 @@ Typical review records include:
 
 - Slash-prefixed prompts in some `claude -p` evaluation flows may be intercepted by the CLI before reaching the model.
 - The skill works best in normal interactive Claude Code sessions.
-- Continuation flows such as `-c` and `-a` are implemented, but automated print-mode benchmarking may underrepresent their real interactive behavior.
+- Continuation flows such as `:continue` and `:all` are implemented, but automated print-mode benchmarking may underrepresent their real interactive behavior.
+
+## 中文说明
+
+### 这是什么
+
+`four-color-review` 是一个通过显式 slash 命令使用的需求评审技能，用于结合讲故事法和四色建模法审查业务需求、记录风险点并输出 Markdown 评审文档。
+
+### 安装方式
+
+将仓库放到：
+
+```text
+~/.claude/skills/four-color-review
+```
+
+或者使用软链接：
+
+```bash
+ln -s /absolute/path/to/four-color-review ~/.claude/skills/four-color-review
+```
+
+安装后请重启 Claude Code 或开启新会话。
+
+### Slash 命令
+
+```text
+/four-color-review
+/four-color-review:continue <review-doc.md>
+/four-color-review:all <review-doc.md>
+```
+
+- `/four-color-review`：发起一次新的评审
+- `/four-color-review:continue`：继续处理 `unresolved` 且低于 `6/10` 的风险项
+- `/four-color-review:all`：对全部问题重新回复和重评分
+
+### 输出文档说明
+
+评审文档通常包含：
+- Requirement Summary
+- Storyline
+- Closure Check
+- Four-Color Extraction
+- Risk Register
+- Health Score Summary
+- Domain Suggestions
+
+### 风险分与健康分
+
+- 每个问题都有 `0-10` 的 `Health Score`
+- 最终会汇总成 `0-100` 的 `Final Health Score`
+- 分数越低，风险越高
+
+### 优化后的需求文档
+
+评审文档输出后，skill 会询问是否基于当前评审结果生成一份优化后的需求文档。
+
+### 已知限制
+
+- 某些 `claude -p` 场景会先拦截 slash 前缀
+- print-mode 评测不能完全代表真实交互会话效果
+- 该 skill 以显式 slash 命令为唯一入口，不再依赖模糊语义触发

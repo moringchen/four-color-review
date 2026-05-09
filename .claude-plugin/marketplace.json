@@ -1,6 +1,13 @@
 {
-  "name": "four-color-review",
-  "display_name": "four-color-review",
-  "description": "Slash-only business requirement review skill using storytelling and four-color modeling.",
-  "repository": "moringchen/four-color-review"
+  "owner": {
+    "name": "moringchen"
+  },
+  "plugins": [
+    {
+      "name": "four-color-review",
+      "display_name": "four-color-review",
+      "description": "Slash-only business requirement review skill using storytelling and four-color modeling.",
+      "repository": "moringchen/four-color-review"
+    }
+  ]
 }

@@ -50,8 +50,8 @@
     },
     {
       "id": 5,
-      "prompt": "/four-color-review -c docs/review.v1.md 只对低于 6/10 且 unresolved 的问题继续追问，并重新输出评审文档。",
-      "expected_output": "The response should explain that -c only continues unresolved items below 6/10 and produces a new document version.",
+      "prompt": "/four-color-review:continue docs/review.v1.md 只对低于 6/10 且 unresolved 的问题继续追问，并重新输出评审文档。",
+      "expected_output": "The response should explain that :continue only continues unresolved items below 6/10 and produces a new document version.",
       "files": [],
       "assertions": [
         {"text": "records unresolved risks with a 0-10 Health Score"},

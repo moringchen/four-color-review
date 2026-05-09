@@ -4,6 +4,24 @@
 
 `four-color-review` is a Claude skill for developers and architects who want to review whether a business requirement, workflow, or PRD tells a complete story before moving into implementation.
 
+## Installation
+
+### Claude Code local skills directory
+
+Install by placing this repo at:
+
+```text
+~/.claude/skills/four-color-review
+```
+
+Or symlink it from your working copy:
+
+```bash
+ln -s /absolute/path/to/four-color-review ~/.claude/skills/four-color-review
+```
+
+After that, restart Claude Code or start a new session so the skill is discovered.
+
 ## When to use
 
 Use it when you need to:
@@ -20,7 +38,7 @@ Invoke with:
 /four-color-review
 ```
 
-Continuation modes:
+## Continuation modes
 
 ```text
 /four-color-review -c <review-doc.md>
@@ -58,3 +76,19 @@ After the review document is complete, the skill asks whether to generate an opt
 8. Health Score Summary
 9. Domain Suggestions
 10. Optional optimized requirements document prompt
+
+## Review document behavior
+
+The skill is designed to produce a Markdown review document that can be saved directly.
+
+Typical review records include:
+- unresolved risks
+- per-question health scores
+- a final overall health score
+- follow-up prompts for missing information
+
+## Known limitations
+
+- Slash-prefixed prompts in some `claude -p` evaluation flows may be intercepted by the CLI before reaching the model.
+- The skill works best in normal interactive Claude Code sessions.
+- Continuation flows such as `-c` and `-a` are implemented, but automated print-mode benchmarking may underrepresent their real interactive behavior.

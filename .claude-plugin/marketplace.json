@@ -1,15 +1,15 @@
 {
+  "schemaVersion": "1.0",
   "name": "moringchen-four-color-review",
-  "owner": {
-    "name": "moringchen"
-  },
+  "version": "1.0.0",
+  "description": "四色评审插件",
+  "author": "moringchen",
   "plugins": [
     {
-      "name": "four-color-review",
-      "display_name": "four-color-review",
-      "description": "Slash-only business requirement review skill using storytelling and four-color modeling.",
-      "repository": "moringchen/four-color-review",
-      "source": "github"
+      "id": "four-color-review",
+      "name": "四色评审",
+      "source": "github:moringchen/four-color-review",
+      "enabled": true
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "name": "four-color-review",
   "description": "Slash-only business requirement review skill using storytelling and four-color modeling.",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": {
     "name": "moringchen",
     "email": "placeholder@example.com"

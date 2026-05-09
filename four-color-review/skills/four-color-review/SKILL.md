@@ -45,13 +45,14 @@ Do not use fuzzy semantic triggering for this skill. It is a command-driven revi
 10. Output `Risk Register` and `Health Score Summary`, and report the final overall score on a 0-100 scale.
 11. End with lightweight domain suggestions only.
 12. Every four-color review run must create a new review document file rather than overwrite a prior one.
-13. Every review document must include a fixed score-document marker at the beginning of the file so it can be recognized as a valid four-color review score document.
-14. The review document must record the source requirement document path.
-15. If the source requirement document is itself an optimized requirements document, detect that from its optimization record section and copy that optimization record section into the new review document before adding the current review results.
-16. After the review document is complete, ask whether the user wants an optimized requirements document generated from the current review using `AskUserQuestion`. If the user declines, end the turn.
-17. If the user confirms generation of the optimized requirements document, save the generated document as a file in the current working directory before ending the turn.
-18. The optimized requirements document filename must include the current date and the document version.
-19. The optimized requirements document must append an optimization record entry for the current generation, including timestamp, source review document path, and output document path.
+13. The review document filename must use the user-provided source requirement document name plus `-评审-日期-版本`.
+14. Every review document must include a fixed score-document marker at the beginning of the file so it can be recognized as a valid four-color review score document.
+15. The review document must record the source requirement document path.
+16. If the source requirement document is itself an optimized requirements document, detect that from its optimization record section and copy that optimization record section into the new review document before adding the current review results.
+17. After the review document is complete, ask whether the user wants an optimized requirements document generated from the current review using `AskUserQuestion`. If the user declines, end the turn.
+18. If the user confirms generation of the optimized requirements document, save the generated document as a file in the current working directory before ending the turn.
+19. The optimized requirements document filename must use the user-provided source requirement document name plus `-优化-日期-版本`.
+20. The optimized requirements document must append an optimization record entry for the current generation, including timestamp, source review document path, and output document path.
 
 ## Question Interaction Rule
 
@@ -87,19 +88,21 @@ When asking follow-up questions:
 
 ## Output Structure
 
-Always structure the output in this order:
-1. Requirement Summary
-2. Source Document Info
-3. Optimization Record Inheritance (only when source is an optimized requirements document)
-4. Storyline
-5. Closure Check
-6. Missing Information Questions (only if blocked)
-7. Four-Color Extraction
-8. Responsibility and Relationship Analysis
-9. Question and Answer Log
-10. Risk Register
-11. Health Score Summary
-12. Domain Suggestions
+All section headings in both the review document and the optimized requirements document must use Chinese `##` headings.
+
+Always structure the review output in this order:
+1. 需求摘要
+2. 源文档信息
+3. 优化记录继承（仅当源文档是优化需求文档时）
+4. 故事线
+5. 闭环检查
+6. 缺失信息问题（仅阻塞时出现）
+7. 四色提取
+8. 职责与关系分析
+9. 问答记录
+10. 风险登记
+11. 健康分汇总
+12. 领域建议
 
 ## Review Record Requirements
 
@@ -119,6 +122,7 @@ Each optimized requirements document must explicitly record:
 - the current document version
 - the current generation timestamp
 - cumulative optimization history entries from prior optimized versions, if any
+- the newly appended optimization history entry for the current generation
 
 ## Continuation Modes
 

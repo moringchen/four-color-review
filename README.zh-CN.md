@@ -8,8 +8,11 @@ English documentation: [README.md](README.md)
 
 ## 安装方式
 
+请先进入 Claude Code 会话，再使用插件安装命令：
+
 ```text
-/plugin add moringchen/four-color-review
+/plugin marketplace add moringchen/four-color-review
+/plugin marketplace install moringchen/four-color-review
 ```
 
 ## Slash 命令

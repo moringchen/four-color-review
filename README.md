@@ -8,8 +8,11 @@ Chinese documentation: [README.zh-CN.md](README.zh-CN.md)
 
 ## Installation
 
+Use Claude Code's plugin commands from inside a Claude Code session:
+
 ```text
-/plugin add moringchen/four-color-review
+/plugin marketplace add moringchen/four-color-review
+/plugin marketplace install moringchen/four-color-review
 ```
 
 ## When to use

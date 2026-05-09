@@ -72,6 +72,8 @@ Stop and ask before continuing if any of these are unclear:
 When asking follow-up questions:
 - ask one question at a time
 - ask the smallest question that unblocks closure
+- if multiple gaps exist, choose only the single most blocking gap first
+- do not ask the second question until the first one has been answered
 - continue from the blocked step after the answer arrives
 - do not invent assumptions and continue silently
 

@@ -9,8 +9,7 @@ English documentation: [README.md](README.md)
 ## 安装方式
 
 ```text
-/plugin marketplace add moringchen/four-color-review
-/plugin marketplace install moringchen/four-color-review
+/plugin add moringchen/four-color-review
 ```
 
 ## Slash 命令
